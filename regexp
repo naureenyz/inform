@@ -1,0 +1,48 @@
+-------name------
+var regname=/^[a-zA-Z0-9_]{3,16}$/;
+
+'^': Asserts the start of the string.
+'[a-zA-Z0-9_]': Allows any alphanumeric character (letter or number) or underscore.
+'{3,16}': Specifies a minimum of 3 characters and a maximum of 16 characters.
+'$': Asserts the end of the string.
+This regular expression enforces a username policy with the following criteria:
+
+Alphanumeric characters (letters and numbers).
+Underscores are allowed.
+Minimum length of 3 characters.
+Maximum length of 16 characters.
+
+-------Email--------
+
+let regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/; 
+
+'^' - It is the start of the string.
+
+'[a-z0-9]+' - Any character between a to z and 0 to 9 at the start of the string.
+
+'@ '- The string should contains ‘@’ character after some alphanumeric characters.
+
+'[a-z]+' - At least one character between a to z after the ‘@’ character in the string.
+
+'\. '– Email should contain the dot followed by some characters followed by the ‘@’ character
+
+'[a-z]{2,3}$ '- It should contain two or three alphabetical characters at the end of the string. The ‘$’ represents the end of the string.
+
+
+
+----PASSWORD-------
+
+var regpass=^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$;
+
+
+'^': Asserts the start of the string.
+'(?=.*[a-z])': Requires at least one lowercase letter.
+'(?=.*[A-Z])': Requires at least one uppercase letter.
+'(?=.*\d)': Requires at least one digit.
+'(?=.*[@$!%*?&])': Requires at least one special character from the provided set.
+'[A-Za-z\d@$!%*?&]{8,}': Allows only the specified characters (uppercase, lowercase, digits, and special characters) and requires a minimum length of 8 characters.
+'$': Asserts the end of the string.
+
+
+
+

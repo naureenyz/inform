@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ body{
+     background-image: url(img/ev2.jpg);
+     background-size: cover;
+     width: 100%;
+     height: 100vh;
+     display: flex;
+ }
+ .conatiner{
+     /* border: 1px solid red; */
+     border-radius: 5px;
+     margin: auto;
+     width:400px;
+     height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(230, 216, 216,0.5);
+
+ }
+ form{
+     width: 90%;
+ }
+ input{
+     width:100% ;
+     height: 30px;
+     border: none;
+     border-radius: 5px;
+     margin-top: 10px;
+ }
+ label{
+     color: rgb(61, 13, 13);
+     font-weight: bold;
+ }
+#btn{
+    width: 100%;
+    color: rgb(243, 24, 188);
+    font-size: 20px;
+}
+input:focus{
+    border: 1px solid rgb(14, 221, 228);
+    outline: 1px solid rgb(243, 24, 188);
+}
+    </style>
+</head>
+<body>
+    
+        
+    <div class="conatiner">
+<form action="index.html" name="frm" onsubmit="return validate()">
+    <label for="">Email</label>
+    <div>
+    <input type="email" name="email" id="" onfocus="emailerrror()"><p id="error" style="color: red;"></p>
+</div>
+<label for="">Password</label>
+<div>
+    <input type="password" name="password" id="" onfocus="passerrror()"><p id="errorpass" style="color: red;"></p>
+</div>
+    <input id="btn" type="submit" value="login">
+</form>
+</div>
+<script>
+function validate()
+{ var em=document.frm.email.value;
+    var pass=document.frm.password.value;
+    if(em=="" || pass==""){
+        if(em==""){
+            document.getElementById('error').innerHTML="empty";
+        }
+        if(pass==""){
+            document.getElementById('errorpass').innerHTML="empty"
+        }
+        
+        return false;
+
+    }
+    else{
+        return true;
+    }
+
+}
+function emailerrror(){
+    document.getElementById("error").innerHTML="";
+}
+function passerrror(){
+    document.getElementById("errorpass").innerHTML="";
+}
+</script>
+</body>
+</html>
